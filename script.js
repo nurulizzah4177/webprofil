@@ -1,47 +1,41 @@
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+e.preventDefault();
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value;
+const email = document.getElementById("email").value.trim();
+const password = document.getElementById("password").value;
 
-    const usernameError = document.getElementById("usernameError");
-    const passwordError = document.getElementById("passwordError");
-    const loginMessage = document.getElementById("loginMessage");
+const emailError = document.getElementById("emailError");
+const emailSuccess = document.getElementById("emailSuccess");
+const passwordError = document.getElementById("passwordError");
+const message = document.getElementById("message");
 
-    // Menghapus pesan sebelumnya
-    usernameError.textContent = "";
-    passwordError.textContent = "";
-    loginMessage.textContent = "";
+emailError.textContent = "";
+emailSuccess.textContent = "";
+passwordError.textContent = "";
+message.textContent = "";
 
-    let valid = true;
+let valid = true;
 
-    // Validasi username atau email
-    if (username === "") {
-        usernameError.textContent = "Username atau email wajib diisi.";
-        valid = false;
-    } else if (
-        username.includes("@") &&
-        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(username)
-    ) {
-        usernameError.textContent = "Format email tidak valid.";
-        valid = false;
-    }
-    // Validasi password
-    if (password.trim() === "") {
-        passwordError.textContent = "Password wajib diisi.";
-        valid = false;
-    } else if (password.length < 8) {
-        passwordError.textContent = "Password minimal 8 karakter.";
-        valid = false;
-    }
-    // Hasil validasi
-    if (valid) {
-        loginMessage.textContent =
-            "Login berhasil divalidasi! Selamat datang ♡";
-        loginMessage.className = "mt-3 text-center text-success";
-    } else {
-        loginMessage.textContent =
-            "Silakan periksa kembali input kamu.";
-        loginMessage.className = "mt-3 text-center text-danger";
-    }
+// Validasi email
+if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+emailError.textContent = "Format email tidak valid.";
+valid = false;
+} else {
+emailSuccess.textContent = "Email berhasil divalidasi!";
+}
+
+// Validasi password
+if (password.length < 8) {
+passwordError.textContent = "Password kurang dari 8 karakter.";
+valid = false;
+}
+
+// Hasil login
+if (valid) {
+message.textContent = "Berhasil login!";
+message.className = "alert alert-success mt-3";
+} else {
+message.textContent = "Validasi gagal. Periksa kembali input kamu.";
+message.className = "alert alert-danger mt-3";
+}
 });
