@@ -1,357 +1,356 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
+    <title>My Little World</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Navigasi  -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">My Profil</a>
+            <a class="navbar-brand" href="#" id="brand">My Little World ♡</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarText" aria-expanded="false" aria-label="Buka navigasi">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse text-right" id="navbarText">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#login">Login</a>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Muncul sebelum login -->
+                    <li class="nav-item" id="loginMenu">
+                        <a class="nav-link active" href="#login">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#Home">Home</a>
+                    <!-- Muncul setelah login -->
+                    <li class="nav-item d-none" id="homeMenu">
+                        <a class="nav-link" href="#Home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#About">About </a>
+                    <li class="nav-item d-none" id="aboutMenu">
+                        <a class="nav-link" href="#About">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Actor Favorit">Actor Favorit</a>
+                    <li class="nav-item d-none" id="actorMenu">
+                        <a class="nav-link" href="#ActorFavorit">Actor Favorite</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-none" id="drakorMenu">
                         <a class="nav-link" href="#Drakor">Drakor</a>
+                    </li>
+                    <li class="nav-item d-none" id="logoutMenu">
+                        <a class="nav-link" href="#" id="logoutButton">Logout</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div>
-    <!-- Login -->
-     <div class="container min-vh-100 d-flex align-items-center" id="login">
-    <div class="container py-5" id="login">
-        <div class="row justify-content-center">
-        <div class="col-md-5 col-lg-4">
-            <div class="card shadow rounded-4">
-            <div class="card-body p-4 text-center">
-                <h3>Welcome Back ♡</h3>
-                <p>Login to My Little World 🌷</p>
-                 <form id="loginForm" novalidate>
-                <div class="mb-3 text-start">
-                <label class="form-label">Email</label>
-                <input type="text" id="email" class="form-control" placeholder="Masukkan email">
-                    <small id="emailError" class="text-danger"></small>
-                    <small id="emailSuccess" class="text-success"></small>
-                    </div>
-                    <div class="mb-3 text-start">
-                    <label class="form-label">Password</label>
-                        <input type="password" id="password" class="form-control"
-                                placeholder="Masukkan password">
-                            <small id="passwordError" class="text-danger"></small>
+    <!-- HALAMAN LOGIN -->
+    <section id="login" class="login-page">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5 col-lg-4">
+                <div class="card shadow rounded-4">
+                    <div class="card-body p-4 text-center">
+                        <i class="fas fa-user-circle fa-3x text-danger"></i>
+                        <h3 class="mt-3">Welcome Back ♡</h3>
+                        <p>Login to My Little World 🌷</p>
+                        <form id="loginForm" novalidate>
+                        <div class="mb-3 text-start">
+                        <label for="email" class="form-label">
+                                Email
+                        </label>
+                            <input type="text" id="email" class="form-control" placeholder="Masukkan email">
+                            <small id="emailError" class="text-danger"></small>
+                            <small id="emailSuccess" class="text-success"></small>
+                                </div>
+                                <div class="mb-3 text-start">
+                                    <label for="password" class="form-label">
+                                        Password
+                                    </label>
+                                    <input type="password" id="password" class="form-control"
+                                        placeholder="Masukkan password">
+                                    <small id="passwordError" class="text-danger"></small>
                                 </div>
                                 <button type="submit" class="btn btn-danger w-100">
-                                Login
+                                    Login 
                                 </button>
-                                <div id="message" class="mt-3" role="status"></div>
+                                <div id="message" class="mt-3" role="status" aria-live="polite"></div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    <div class="container-fluid banner">
-        <div class="contain text-center">
-            <h4 class="display-3">Welcome to My Personal Website<span>♡</span></h4>
-            <h3>Selamat Datang di ruang kecilku,</h3>
-            <h3>tempat di mana aku berbagi tentang diriku,</h3>
-            <h3>dan hal-hal yang aku sukai </h3>
-            <h3 class="display-6">Halo!!</h3>
-            <a href="#Home">
-                <button type="button" class="btn btn-danger btn-lg">
-                    Klik disini
-                </button>
-            </a>
-        </div>
-    </div>
-    </div>
-    </div>
-    <!-- Home  -->
-    <div class="container-fluid Home pt-5 pb-5">
-        <div class="container text-center">
-            <h2 class="display-3" id="Home"> Home</h2>
-            <div class="row pt-4">
-                <div class="col-md-4">
-                    <i class="fas fa-spa fa-2x"></i>
-                    <h4>Welcome to<br>My Little World ♡</h4>
-                    <p>
-                        HAII! I'M IZZAH ♡
-                        Selamat datang di ruang kecilku, tempat aku berbagi
-                        tentang diriku, hobi, dan aktor favorit.
-                        Terima kasih sudah berkunjung!!
-                    </p>
-                </div>
-
-                <div class="col-md-4">
-                    <i class="fas fa-heart fa-2x"></i>
-                    <h4>My Hobbies ♡</h4>
-                    <p>
-                        Saya suka mendengarkan musik, menonton drama Korea,
-                        dan membaca buku cerita bukan buka pelajaran heheh.
-                    </p>
-                </div>
-
-                <div class="col-md-4">
-                    <i class="fas fa-star fa-2x"></i>
-                    <h4>My Favorite Actors ♡</h4>
-                    <p>
-                        Saya akan berbagi tentang aktor favorit
-                        dan drama yang paling aku sukai.
-                    </p>
-                </div>
+    </section>
+    <!-- HALAMAN UTAMA: TERSEMBUNYI SEBELUM LOGIN -->
+    <main id="mainContent" class="d-none">
+    <!-- BANNER -->
+        <div class="container-fluid banner">
+            <div class="container text-center">
+                <h4 class="display-6"></h4>
+                <h1 >Welcome to My Personal Website ♡</h1>
+                <h3>Selamat datang di ruang kecilku 🌷</h3>
+                <a href="#Home" class="btn btn-danger btn-lg">
+                    Klik di sini
+                </a>
             </div>
         </div>
-    </div>
-    <!-- About -->
-    <div class="container-fluid pt-5 pb-5 bg-light">
-        <div class="container text-center">
-            <h2 class="display-3" id="About">About</h2>
-            <P>Selamat datang di dunia kecilku ♡ </P>
-            <p>Tempat aku berbagi cerita tentang diriku, keluarga, hobi, </p>
-            <p> dan hal-hal sederhana yang membuat hidupku lebih berwarna. 🌷🦋
-            </P>
-            <div class="row pt-4 gx-4 gy-4">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="asett/myphoto.jpeg" class="card-img-top" alt="..." width="200" height="350"
-                            object-fit: cover;>
-                        <div class="card-body">
-                            <h5 class="card-title">Hi, it's me, Izzah! 🌷</h5>
-                            <p class="card-text">Haii! Aku Izzah, 18 tahun, mahasiswa Pendidikan Teknologi Informasi
-                                yang suka belajar hal baru dan terus berkembang menjadi versi terbaik diriku. ♡
-                            </p>
-                        </div>
+    <!-- HOME -->
+        <section class="container-fluid py-5 mb-5" id="Home">
+            <div class="container text-center">
+                <h2>Home ♡</h2>
+                <div class="row pt-4 g-4">
+                    <div class="col-md-4">
+                        <i class="fas fa-spa fa-2x"></i>
+                        <h4>Welcome to My Little World ♡</h4>
+                        <p>
+                            Haii! I'm Izzah ♡ Selamat datang di ruang kecilku,
+                            tempat aku berbagi cerita tentang diriku.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-heart fa-2x"></i>
+                        <h4>My Hobbies ♡</h4>
+                        <p>
+                            Aku suka mendengarkan musik, menonton drama Korea,
+                            membaca novel, dan yang paling aku suka adalah tidur.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-star fa-2x"></i>
+                        <h4>My Favorite Actors ♡</h4>
+                        <p>
+                            Di sini aku berbagi tentang aktor Korea favorit
+                            dan drama yang paling aku sukai.
+                        </p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="asett/siblings.jpeg" class="card-img-top" alt="..." width="200" height="350"
-                            object-fit: cover;>
-                        <div class="card-body">
-                            <h5 class="card-title">To My Beloved Siblings ♡</h5>
-                            <p class="card-text">Aku bersyukur memiliki kalian. Walaupun kita terkadang bertengkar,
-                                kalian akan selalu menjadi bagian penting dalam hidupku I Love You Always ♡
-                            </p>
+            </div>
+        </section>
+    <!-- ABOUT -->
+        <section class="container-fluid py-5 bg-white" id="About">
+            <div class="container text-center">
+                <h2>About Me 🌷</h2>
+                <p>Tempat aku berbagi cerita tentang diriku, keluarga, dan hobi.</p>
+
+                <div class="row pt-4 g-4">
+
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="asett/myphoto.jpeg" class="card-img-top foto-kartu" alt="Foto Izzah">
+
+                            <div class="card-body">
+                                <h5>Hi, it's me, Izzah! 🌷</h5>
+                                <p>
+                                    Haii! Aku Izzah, 18 tahun, mahasiswa
+                                    Pendidikan Teknologi Informasi yang suka
+                                    belajar hal baru dan terus berkembang
+                                    menjadi versi terbaik diriku. ♡
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="asett/buku.jpg" class="card-img-top" alt="..." width="200" height="350" object-fit:
-                            cover;>
-                        <div class="card-body">
-                            <h5 class="card-title">My Hobbies 🎧🎬📖😴</h5>
-                            <p class="card-text">Di waktu luang, aku suka mendengarkan musik, menonton drama Korea,
-                                membaca novel, dan menikmati waktu untuk diriku sendiri. Tapi, yang paling aku
-                                suka adalah tidur!
-                            </p>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="asett/siblings.jpeg" class="card-img-top foto-kartu" alt="Foto bersama saudara">
+                            <div class="card-body">
+                                <h5>To My Beloved Siblings ♡</h5>
+                                <p>
+                                    Aku bersyukur memiliki kalian. Walaupun
+                                    kita terkadang bertengkar, kalian akan
+                                    selalu menjadi bagian penting dalam hidupku.
+                                    I Love You Always ♡
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="asett/buku.jpg" class="card-img-top foto-kartu" alt="Buku dan hobi">
+                            <div class="card-body">
+                                <h5>My Hobbies 🎧🎬📖😴</h5>
+                                <p>
+                                    Aku suka mendengarkan musik, menonton
+                                    drama Korea, membaca novel, dan menikmati
+                                    waktu untuk diriku sendiri. Yang paling
+                                    aku suka adalah tidur!
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Actor Favorit  -->
-    <div class="container-fluid pt-5 pb-5 bg-light">
-        <div class="container">
-            <h2 class="display-3 text-center" id="Actor Favorit"> Actor Favorite</h2>
+        </section>
+    <!-- ACTOR FAVORIT -->
+        <section class="container py-5" id="ActorFavorit">
+            <h2 class="text-center mb-3">Actor Favorite 🖤</h2>
             <p class="text-center">Kenali aktor Korea favoritku ♡</p>
-            </p>
-            <div class="clearfix pt-5"><img src="asett/kim seonho.jpg"
-                    class="col-md-4 float-md-start mb-3 me-md-4 crop-img" width="250" height="250"
-                    style="object-fit: cover; border-radius: 10px;" />
-                <p> Kim Seon Ho 🖤 </p>
-                <p> 김선호 · Aktor Korea Selatan </p>
-                <p> Tanggal lahir: 8 Mei 1986 </p>
-                <p> Tempat lahir: Seoul, Korea Selatan </p>
-                <p> Tinggi badan: 183 cm </p>
-                <p> Pendidikan: Seoul Institute of the Arts</p>
-                <p> Profesi: Aktor film, drama, dan teater</p>
-                <p> Kim Seon-ho adalah aktor asal Korea Selatan yang dikenal karena kemampuan aktingnya yang memukau
+            <div class="clearfix py-4">
+                <img src="asett/kim seonho.jpg" class="foto-aktor float-md-start me-md-4 mb-3" alt="Kim Seon Ho">
+                <h4>Kim Seon Ho 🖤</h4>
+                <p>Nama Korea: 김선호</p>
+                <p>Tanggal lahir: 8 Mei 1986</p>
+                <p>Tempat lahir: Seoul, Korea Selatan</p>
+                <p>Tinggi badan: 183 cm</p>
+                <p>Pendidikan: Seoul Institute of the Arts</p>
+                <p>Profesi: Aktor film, drama, dan teater</p>
+                <p>
+                    Kim Seon Ho adalah aktor Korea Selatan yang dikenal
+                    karena kemampuan aktingnya yang memukau dan senyumnya
+                    yang manis. Drama yang dibintanginya seru banget!
                 </p>
-                <p> yang memukau dan senyumnya yang manis.saya menyukainya karna dia memiliki pesona yang menarik.</p>
-                <p> drama yang dibintaginya seru bangettt wajib nonton sihh!!!</p>
             </div>
-            <div class="clearfix pt-5"><img src="asett/Cha Woomin.jpg"
-                    class="col-md-4 float-md-start mb-4 me-md-4 crop-img" width="250" height="250"
-                    style="object-fit: cover; object-fit: center top; border-radius: 10px;" />
-                <p> Cha Woo-min 🖤 </p>
-                <p> Nama panggung: Cha Woo-min (차우민)</p>
-                <p> Nama asli: Kim Min-woo</p>
-                <p> Tanggal lahir: 24 Oktober 2000</p>
-                <p> Tempat lahir: Busan, Korea Selatan</p>
-                <p> Tinggi badan: 187 cm</p>
-                <P> Profesi: Aktor</p>
-                <p> Cha Woo-min adalah aktor Korea Selatan yang menarik perhatianku melalui aktingnya yang keren dan
+            <div class="clearfix py-4">
+                <img src="asett/Cha Woomin.jpg" class="foto-aktor float-md-start me-md-4 mb-3" alt="Cha Woo Min">
+                <h4>Cha Woo Min 🖤</h4>
+                <p>Nama panggung: Cha Woo Min (차우민)</p>
+                <p>Nama asli: Kim Min-woo</p>
+                <p>Tanggal lahir: 24 Oktober 2000</p>
+                <p>Tempat lahir: Busan, Korea Selatan</p>
+                <p>Profesi: Aktor</p>
+                <p>
+                    Aku menyukai karismanya dan berbagai karakter yang
+                    ia perankan, terutama saat menjadi second lead atau
+                    villain dalam drama seperti Study Group dan Weak Hero Class.
                 </p>
-                <p> karismanya yang kuat. saya menyukai berbagai karakter yang ia perankan,saya menyukai kalo dia jadi
+            </div>
+            <div class="clearfix py-4">
+                <img src="asett/choi hyunk wook.jpg" class="foto-aktor float-md-start me-md-4 mb-3"
+                    alt="Choi Hyun Wook">
+                <h4>Choi Hyun Wook 🖤</h4>
+                <p>Nama Korea: 최현욱</p>
+                <p>Tanggal lahir: 30 Januari 2002</p>
+                <p>Asal: Korea Selatan</p>
+                <p>Profesi: Aktor</p>
+                <p>
+                    Aku suka caranya menghidupkan karakter, terutama
+                    dalam Weak Hero Class. Aktingnya keren dan berkesan. ♡
                 </p>
-                <p> second lead dan sebagai villain terutama dalam Study Group dan Weak Hero Class Ia membuat setiap
+            </div>
+            <div class="clearfix py-4">
+                <img src="asett/do kyung soo.jpg" class="foto-aktor float-md-start me-md-4 mb-3" alt="Do Kyung Soo">
+                <h4>D.O. / Do Kyung Soo 🖤</h4>
+                <p>Nama lengkap: Do Kyung Soo (도경수)</p>
+                <p>Tanggal lahir: 12 Januari 1993</p>
+                <p>Profesi: Penyanyi dan aktor</p>
+                <p>Grup: EXO</p>
+                <p>
+                    Aku menyukai caramu bernyanyi, tertawa, dan berbicara.
+                    Aku ingin menikmati karya-karyamu dan tetap menghargai
+                    batas yang kamu buat. Terima kasih sudah hadir dalam hidup ini. ♡
                 </p>
-                <p> karakter terasa menarik dan berkesan.</p>
             </div>
-            <div class="clearfix pt-5"><img src="asett/choi hyunk wook.jpg"
-                    class="col-md-4 float-md-start mb-3 me-md-4 crop-img" width="250" height="250"
-                    style="object-fit: cover; border-radius: 10px;" />
-                <p> Choi Hyun-wook 🖤
-                <p> Nama: Choi Hyun-wook (최현욱)</p>
-                <p> Tanggal lahir: 30 Januari 2002</p>
-                <p> Asal: Korea Selatan </p>
-                <p> Zodiak: Aquarius ♒ </p>
-                <p> Tinggi badan: Sekitar 181 cm</p>
-                <p> Profesi: Aktor </p>
-                <p> Choi Hyun-wook adalah aktor Korea berbakat yang dikenal karena kepribadiannya yang menawan dan </p>
-                <p> kemampuan aktingnya yang mengesankan. saya suka caranya menghidupkan setiap karakter, terutama </p>
-                <p> dalam Weak Hero Class disini dia sangatt keren dan Twinkling Watermelon saya tidak menonton </p>
-                <p> karna ini lumayan sedih. ♡</p>
-            </div>
-            <div class="clearfix pt-5"><img src="asett/do kyung soo.jpg"
-                    class="col-md-4 float-md-start mb-3 me-md-4 crop-img" width="250" height="250"
-                    style="object-fit: cover; border-radius: 10px;" />
-                <p> D.O. 🖤</p>
-                <p> Nama lengkap: Do Kyung-soo (도경수) </p>
-                <p> Nama panggung: D.O.</p>
-                <p> Tanggal lahir: 12 Januari 1993 </p>
-                <p> Asal: Korea Selatan </p>
-                <p> Zodiak: Capricorn ♑ </p>
-                <p> Profesi: Penyanyi dan aktor Grup: EXO </p>
-                <p> D.O. adalah aktor dan penyanyi Korea berbakat yang dikenal sebagai anggota EXO. saya menyukai caramu
-                    bernyanyi</p>
-                <p> caramu tertawa,caramu berbicara,saya menyukai semua versi dirimu, tapi aku tidak tahu hal-hal kecil
-                    yang bisa </p>
-                <p> membuat harimu menjadi lebih baik, saya tidak tahu seperti apa kehidupanmu saat camera berhenti
-                    merekam, saya </p>
-                <p> hanya ingin menikmati karya-karyamu menghargai batas yang kamu buat. but terimakasih sudah hadir
-                    dalam hidup ini </p>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!-- Drakor  -->
-    <div class="container-fluid Home pt-5 pb-5">
-        <div class="container">
-            <h2 class="display-3 text-center" id="Drakor"> Drama Korea </h2>
-            <div class="row justify-content-center align-items-start pt-4 g-3">
-                <div class="col-md-3">
-                    <img src="asett/tcblt.jpg" class="img-fluid rounded" alt="Can This Love Be Translated?"
-                        style="width: 100%; height: 300px; object-fit: cover;">
-                    <div class="mt-3">
-                        <h5>Can This Love Be Translated? </h5>
-                        <p>
-                            Drama ini mengajarkanku bahwa cinta membutuhkan komunikasi,
-                            pengertian, dan kesabaran.Terkadang, dua orang bisa memiliki
-                            cara berbeda dalam mengungkapkan perasaan, tetapi dengan
-                            saling memahami,
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <p><b>Genre:</b> Romantis, Komedi</p>
-                    <p><b>Tahun:</b> 2025</p>
-                    <p><b>Pemeran:</b> Kim Seon Ho dan Go Youn Jung</p>
-                    <p><b>Platform:</b> Netflix</p>
-                    <p><b>Sinopsis:</b> Penerjemah dan aktris yang
-                        belajar memahami bahasa serta perasaan satu sama lain.</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="asett/THE MANIPULATED.jpg" class="img-fluid rounded" alt="The Manipulated"
-                        style="width: 100%; height: 300px; object-fit: cover;">
-                    <div class="mt-4">
-                        <h5>The Manipulated ♡</h5>
-                        <p>
-                            Kadang hidup hancur karena kebohongan orang lain. Drama ini mengajarkan kita untuk tetap
-                            kuat menghadapi ketidakadilan dan percaya bahwa kebenaran tak bisa disembunyikan selamanya.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <p><b>Genre:</b> Action, Thriller</p>
-                    <p><b>Tahun:</b> 2025</p>
-                    <p><b>Pemeran:</b> Ji Chang Wook dan Doh Kyung Soo</p>
-                    <p><b>Platform:</b> Disney+</p>
-                    <p><b>Sinopsis:</b> Seorang pria yang dijebak
-                        dalam kejahatan dan berusaha mengungkap kebenaran.</p>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid Home pt-5 pb-5">
+        </section>
+    <!-- DRAKOR -->
+        <section class="container-fluid py-5 bg-white" id="Drakor">
             <div class="container">
-                <div class="row justify-content-center align-items-start pt-4 g-3">
-                    <div class="col-md-3">
-                        <img src="asett/night has come.jpg" class="img-fluid rounded" alt="Can This Love Be Translated?"
-                            style="width: 100%; height: 300px; object-fit: cover;">
-                        <div class="mt-3">
-                            <h5>Night Has Come </h5>
-                            <p>
-                                Dalam keadaan paling menakutkan, kita belajar bahwa kepercayaan
-                                itu berharga, tetapi tidak semua orang bisa dipercaya.
-                            </p>
+            <h2 class="text-center mb-2">My K-Drama ♡</h2>
+            <p class="text-center mb-4">
+            Kumpulan drama Korea favoritku 🌷 </p>
+    <!-- DAFTAR DRAMA -->
+        <div id="daftarDrakor">
+        <div class="row g-4">
+            <div class="col-6 col-md-3">
+            <div class="card drama-card h-100 shadow-sm">
+                <img src="asett/tcblt.jpg" class="poster-drakor" alt="Can This Love Be Translated?">
+                <div class="card-body text-center">
+                <h6>Can This Love Be Translated?</h6>
+                <p class="text-muted mb-3">2025</p>
+                <button class="btn btn-danger btn-sm" onclick="lihatDetail(0)">
+                        Lihat Detail 
+                </button>
+            </div>
+        </div>
+            </div>
+            <div class="col-6 col-md-3">
+            <div class="card drama-card h-100 shadow-sm">
+                <img src="asett/THE MANIPULATED.jpg" class="poster-drakor" alt="The Manipulated">
+                <div class="card-body text-center">
+                <h6>The Manipulated</h6>
+                <p class="text-muted mb-3">2025</p>
+                <button class="btn btn-danger btn-sm" onclick="lihatDetail(1)">
+                    Lihat Detail 
+                </button>
+            </div>
+        </div>
+            </div>
+              <div class="col-6 col-md-3">
+                <div class="card drama-card h-100 shadow-sm">
+                <img src="asett/night has come.jpg" class="poster-drakor" alt="Night Has Come">
+                <div class="card-body text-center">
+                <h6>Night Has Come</h6>
+                <p class="text-muted mb-3">2023</p>
+                <button class="btn btn-danger btn-sm" onclick="lihatDetail(2)">
+                    Lihat Detail 
+                </button>
+            </div>
+        </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card drama-card h-100 shadow-sm">
+                <img src="asett/week hero.jpg" class="poster-drakor" alt="Weak Hero Class 1">
+                <div class="card-body text-center">
+                <h6>Weak Hero Class 1</h6>
+                <p class="text-muted mb-3">2022</p>
+                <button class="btn btn-danger btn-sm" onclick="lihatDetail(3)">
+                    Lihat Detail 
+                </button>
+            </div>
+        </div>
+            </div>
+            </div>
+                </div>
+                <div id="detailDrakor" class="d-none">
+                    <button class="btn btn-outline-danger mb-4" onclick="kembaliDrakor()">
+                        <i class="fas fa-arrow-left"></i>
+                        Kembali ke Drakor
+                    </button>
+                    <div class="card shadow-sm detail-card">
+                        <div class="row g-0">
+                         <div class="col-md-4">
+                            <img id="detailPoster" src="" class="detail-poster" alt="Poster drama Korea">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <h2 id="detailJudul" class="mb-3"></h2>
+                                    <p>
+                                        <strong>Tahun Terbit:</strong>
+                                        <span id="detailTahun"></span>
+                                    </p>
+                                    <p>
+                                        <strong>Latar:</strong>
+                                        <span id="detailArea"></span>
+                                    </p>
+                                    <p>
+                                        <strong>Kategori:</strong>
+                                        <span id="detailKategori"></span>
+                                    </p>
+                                    <hr>
+                                    <h5>Sinopsis </h5>
+                                    <p id="detailSinopsis"></p>
+                                    <h5>Nama Pemain 🎬</h5>
+                                    <p id="detailPemain"></p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <p><b>Genre:</b> Thriller, Misteri,Horor</p>
-                        <p><b>Tahun:</b> 2023</p>
-                        <p><b>Pemeran:</b> Lee Jae In, Cha Woo Min, Ahn Ji Ho,</p>
-                        <p><b>Platform:</b> Netflix</p>
-                        <p><b>Sinopsis:</b> Sekelompok siswa SMA terjebak dalam permainan mafia mematikan dan harus
-                            mengungkap identitas mafia demi bertahan hidup..</p>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="asett/week hero.jpg" class="img-fluid rounded" alt="The Manipulated"
-                            style="width: 100%; height: 300px; object-fit: cover;">
-                        <div class="mt-4">
-                            <h5>Week Hero Class</h5>
-                            <p>
-                                Drama ini mengajarkan tentang persahabatan bukan tentang siapa yang
-                                paling kuat, tapi siapa yang paling setia dan paling berani melindungi
-                                satu sama lain.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <p><b>Genre:</b> Action, Drama, Thriller, School</p>
-                        <p><b>Tahun:</b> 2022</p>
-                        <p><b>Pemeran:</b> Park Ji Hoon, Choi Hyun Wook, dan Hong Kyung</p>
-                        <p><b>Platform:</b> Netflix </p>
-                        <p><b>Sinopsis:</b> Siswa pintar yang melawan perundungan dan menghadapi ujian persahabatan.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+        </section>
+        <footer class="text-center bg-dark text-white py-3">
+            <p class="mb-0">Made with ♡ by Izzah | My Little World 🌷</p>
+        </footer>
+    </main>
+    <!-- JAVASCRIPT BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JAVASCRIPT LOGIN -->
     <script src="script.js"></script>
 </body>
-
 </html>

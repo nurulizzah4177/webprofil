@@ -1,22 +1,201 @@
+/* PENGATURAN DASAR */
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    background: #fffafc;
+}
+
+/* NAVBAR */
+.navbar {
+    z-index: 1000;
+}
+
+/* HALAMAN LOGIN */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 15px 40px;
+    background: linear-gradient(135deg, #fff0f5, #fff);
+}
+.login-page .card {
+    border: none;
+    border-radius: 20px;
+}
+.login-page h3 {
+    color: #000000;
+}
+.login-page .btn-danger {
+    background-color: #d51111;
+    border-color: #f40c0c;
+}
+.login-page .btn-danger:hover {
+    background-color: #ea0949;
+}
+/* PESAN VALIDASI */
+#emailError,
+#emailSuccess,
+#passwordError {
+    display: block;
+    margin-top: 4px;
+}
+
+/* BANNER HOME */
 .banner {
     background: url(asett/Sampul.jpeg);  
         no-repeat center center;
     background-size: cover;
-    margin-top: 10%;
     padding-top: 20%;
-    padding-bottom: 20%;
+    padding-bottom: 30%;
     color: #fff;
+
+}
+.banner h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    margin-bottom: 20px;
+}
+.banner p {
+    font-size: 3000px;
 }
 
-.crop-img {
+/* BAGIAN WEBSITE */
+#Home,
+#About,
+#ActorFavorit,
+#Drakor {
+    scroll-margin-top: 20px;
+}
+#Home h2,
+#About h2,
+#ActorFavorit h2,
+#Drakor h2 {
+    margin-bottom: 20px;
+}
+
+/* KARTU FOTO */
+.foto-kartu {
+    width: 100%;
+    height: 350px;
     object-fit: cover;
 }
 
-.Home{
-    background: url(asett/bg.jpg) no-repeat center center;
-    background-size: cover;
-    padding-bottom: 30%;
-    margin-top: 10%;
-    padding-top: 20%;
-    color: #030303;
+/* FOTO AKTOR */
+.foto-aktor {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
 }
+.clearfix {
+    overflow: auto;
+}
+
+/* POSTER DRAKOR */
+.poster-drakor {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* KARTU */
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-body {
+    line-height: 1.7;
+}
+
+/* TAMPILAN HP */
+@media (max-width: 767px) {
+    .foto-aktor {
+        width: 100%;
+        height: 300px;
+        margin-right: 0;
+    }
+
+    .banner {
+        min-height: 60vh;
+        padding-top: 130px;
+    }
+}
+
+/* KOLEKSI K-DRAMA */
+#Drakor {
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+}
+.drama-card {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.drama-card:hover {
+    transform: translateY(-5px);
+}
+.poster-drakor {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+.drama-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.drama-card h6 {
+    line-height: 1.5;
+    min-height: 45px;
+}
+.drama-card .btn-danger {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+/* DETAIL DRAMA */
+.detail-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.detail-poster {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    object-fit: cover;
+}
+#detailDrakor h2 {
+    color: #fff;
+}
+#detailDrakor h5 {
+    color: #b84d70;
+    margin-top: 20px;
+}
+#detailDrakor p {
+    line-height: 1.8;
+}
+@media (max-width: 767px) {
+    .poster-drakor {
+        height: 210px;
+    }
+    .detail-poster {
+        height: 350px;
+        min-height: 0;
+    }
+    #detailDrakor .card-body {
+        padding: 20px !important;
+    }
+} 
