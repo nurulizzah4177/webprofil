@@ -50,8 +50,7 @@ body {
 
 /* BANNER HOME */
 .banner {
-    background: url(asett/Sampul.jpeg);  
-        no-repeat center center;
+    background: url(asett/Sampul.jpeg);
     background-size: cover;
     margin-top: 10%;
     padding-top: 20%;
