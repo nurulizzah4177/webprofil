@@ -53,17 +53,20 @@ body {
     background: url(asett/Sampul.jpeg);  
         no-repeat center center;
     background-size: cover;
+    margin-top: 10%;
     padding-top: 20%;
     padding-bottom: 30%;
     color: #fff;
-
+}
+.crop-img {
+    object-fit: cover;
 }
 .banner h1 {
     font-size: clamp(28px, 5vw, 48px);
     margin-bottom: 20px;
 }
 .banner p {
-    font-size: 3000px;
+    font-size: 1000px;
 }
 
 /* BAGIAN WEBSITE */
